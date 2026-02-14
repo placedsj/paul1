@@ -25,7 +25,7 @@ export const Impact: React.FC = () => {
                      {/* Map Content */}
                      <div className="relative w-full h-full bg-white rounded-3xl overflow-hidden shadow-soft">
                         <img 
-                            src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&opacity=0.3"
+                            src="https://i.ibb.co/nNNvG2s8/AEBDDDFF-AB86-46-A7-96-E4-C3-DCE7468884.jpg"
                             className="w-full h-full object-cover opacity-30 grayscale"
                             alt="Map Background"
                         />

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Home } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { NavLink } from '../types';
 
 const links: NavLink[] = [
   { label: 'Services', href: '#services' },
-  { label: 'About Paul', href: '#hero' },
+  { label: 'About Paul', href: '#about' },
   { label: 'Our Community', href: '#community' },
-  { label: 'Projects', href: '#contact' }, // Mapped to contact for demo flow
+  { label: 'Projects', href: '#projects' }, 
 ];
 
 export const Navbar: React.FC = () => {
@@ -31,10 +31,13 @@ export const Navbar: React.FC = () => {
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 group">
-            <div className="relative">
-                <Home size={32} className="text-forest-900 fill-forest-900/10" strokeWidth={1.5} />
-                <div className="absolute -top-1 -right-1 w-3 h-3 bg-gold-500 rounded-full border-2 border-white"></div>
+        <a href="#" className="flex items-center gap-3 group">
+            <div className="relative w-12 h-12">
+                <img 
+                    src="https://i.ibb.co/rKvQvx5T/39316-D9-E-DCC0-4-BCC-8-BB4-A52-FAF0-C2-BCB.png" 
+                    alt="Paul Roofs Logo" 
+                    className="w-full h-full object-contain"
+                />
             </div>
             <div className="flex flex-col">
                 <span className="font-serif font-black text-2xl tracking-tight leading-none text-forest-900">

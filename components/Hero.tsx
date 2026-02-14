@@ -51,9 +51,9 @@ export const Hero: React.FC = () => {
           <div className="lg:w-1/2 relative">
              <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl shadow-forest-900/10 transform rotate-1 hover:rotate-0 transition-transform duration-500">
                 <img 
-                    src="https://images.unsplash.com/photo-1627909968252-875883713f0c?q=80&w=2940&auto=format&fit=crop"
-                    alt="Paul in front of home"
-                    className="w-full h-[600px] object-cover object-top"
+                    src="https://i.ibb.co/LdFqsZtX/IMG-3724.jpg"
+                    alt="Paul Roofs Project"
+                    className="w-full h-[600px] object-cover object-center"
                 />
                 {/* Overlay Text simulated from image */}
                 <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-forest-900/80 to-transparent">
