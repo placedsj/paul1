@@ -1,5 +1,16 @@
 import React from 'react';
-import { MapPin, Trophy } from 'lucide-react';
+import { MapPin, Trophy, Info } from 'lucide-react';
+
+const communities = [
+    { name: 'Damascus', role: 'Headquarters', detail: 'Home of Paul Roofs. Same-day emergency response available.' },
+    { name: 'Sussex', role: 'Core Service Area', detail: 'Specializing in heritage home roof restorations and repairs.' },
+    { name: 'Hampton', role: 'Core Service Area', detail: 'Complete roofing systems for new constructions and renovations.' },
+    { name: 'Saint John', role: 'Metro Service', detail: 'Commercial and residential flat roofing solutions.' },
+    { name: 'Quispamsis', role: 'Valley Service', detail: 'Expert asphalt shingle replacement and upgrades.' },
+    { name: 'Rothesay', role: 'Valley Service', detail: 'Premium metal roofing installations and aesthetic upgrades.' },
+    { name: 'Norton', role: 'Rural Service', detail: 'Barn, agricultural, and residential roofing services.' },
+    { name: 'Apohaqui', role: 'Rural Service', detail: 'Leak detection, storm damage repair, and maintenance.' },
+];
 
 export const Impact: React.FC = () => {
   return (
@@ -9,7 +20,8 @@ export const Impact: React.FC = () => {
             Serving Southern NB
         </h2>
 
-        <div className="flex flex-col lg:flex-row gap-12 items-center">
+        {/* Top Section: Map & Badge */}
+        <div className="flex flex-col lg:flex-row gap-12 items-center mb-24">
             
             {/* Map Visualization */}
             <div className="w-full lg:w-7/12 relative group">
@@ -76,8 +88,44 @@ export const Impact: React.FC = () => {
                     From Damascus to the coast, we're proud to be a part of this community, delivering reliable service and lasting value to our neighbors for 35 years.
                 </p>
             </div>
-
         </div>
+
+        {/* Bottom Section: Service Area Grid */}
+        <div className="border-t border-forest-100 pt-16">
+            <div className="text-center mb-12">
+                <h3 className="text-2xl font-serif font-bold text-forest-900 mb-4">Our Local Service Areas</h3>
+                <div className="w-24 h-1 bg-gold-500 mx-auto rounded-full"></div>
+                <p className="mt-4 text-forest-500 text-sm">Hover over a location to see service details</p>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {communities.map((town) => (
+                    <div key={town.name} className="group relative">
+                        <div className="bg-cream-50 border border-cream-200 rounded-xl p-4 text-center cursor-help transition-all duration-300 hover:border-gold-500 hover:shadow-lg hover:-translate-y-1 h-full flex flex-col justify-center">
+                            <div className="flex items-center justify-center gap-2 mb-2">
+                                <MapPin size={16} className="text-gold-500" />
+                                <span className="font-bold text-forest-900">{town.name}</span>
+                            </div>
+                            <span className="text-xs text-forest-500 font-medium uppercase tracking-wider">{town.role}</span>
+                        </div>
+                        
+                        {/* Tooltip */}
+                        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-20 pointer-events-none transform group-hover:-translate-y-1 translate-y-2">
+                            <div className="bg-forest-900 text-white text-sm p-5 rounded-xl shadow-xl relative text-center leading-relaxed border border-gold-500/20">
+                                <p>{town.detail}</p>
+                                {/* Arrow */}
+                                <div className="absolute top-full left-1/2 -translate-x-1/2 border-8 border-transparent border-t-forest-900"></div>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+            
+            <p className="text-center text-forest-500 mt-12 text-sm">
+                Don't see your town? <a href="#contact" className="text-gold-600 font-bold hover:underline">Contact us</a> to check if we service your area.
+            </p>
+        </div>
+
       </div>
     </section>
   );
